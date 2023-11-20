@@ -2,6 +2,7 @@
 use App\http\Controllers\AdminController;
 use App\http\controllers\DataSiswa;
 use App\http\controllers\BookController;
+use App\http\controllers\GuruController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,3 +34,7 @@ Route::post('/tambahdata', [BookController::class,'buat'])->name('admin.buat');
 Route::get('/test/mengubah/{id}', [BookController::class,'mengubah'])->name('admin.mengubah');
 Route::post('/memperbarui', [BookController::class,'update'])->name('admin.update');
 Route::get('/test/hapus{id}', [BookController::class,'hapus'])->name('admin.hapus');
+//guru
+Route::get('/dataguru', [GuruController::class,'index'])->name('admin.dataguru');
+Route::get('/dataguru/add', [GuruController::class,'add'])->name('admin.addguru');
+Route::post('/insertguru', [GuruController::class,'insert'])->name('admin.insertguru');
